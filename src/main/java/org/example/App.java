@@ -12,7 +12,7 @@ public class App {
     }
 
     public void run() {
-        int number = 0;
+        long number = 0;
         List<WiseSaying> wiseSayings = new ArrayList<>();
 
         System.out.println("== 명언 앱 ==");
@@ -26,6 +26,7 @@ public class App {
                 break;
             }
             else if (command.equals(("등록"))) {
+
                 System.out.print("명언 : ");
                 String content = sc.nextLine();
                 System.out.print("작가 : ");
@@ -38,7 +39,10 @@ public class App {
             else if (command.equals("목록")) {
                 System.out.println("목록 / 작가 / 명언");
                 System.out.println("----------------------");
-                System.out.println(wiseSayings);
+                for (int i = wiseSayings.size() - 1; i >= 0; i--) {
+                    WiseSaying wiseSaying = wiseSayings.get(i);
+                    System.out.printf("%d, %s, %s\n", wiseSaying.getId(),wiseSaying.getAuthor(),wiseSaying.getContent());
+                }
             }
         }
     }

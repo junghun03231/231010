@@ -9,10 +9,20 @@ public class WiseSaying {
     private String author;
     private String content;
 
-    WiseSaying(int id, String author, String content) {
+    WiseSaying(long id, String author, String content) {
         this.id = id;
         this.author = author;
         this.content = content;
+    }
+
+    public long getId() {
+        return this.id;
+    }
+    public String getAuthor() {
+        return this.author;
+    }
+    public  String getContent() {
+        return this.content;
     }
 
 }
